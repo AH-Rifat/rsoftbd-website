@@ -23,7 +23,7 @@ const OurServices = () => {
         <div className='grid gap-10'>
             {
                 a.map(({ id, image, name }) => {
-                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 p-5'>
+                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5'>
                         <img src={image} alt="image" className="" />
                         <h1 className='font-mono font-semibold text-center text-lg my-4'>{name}</h1>
                     </div>
