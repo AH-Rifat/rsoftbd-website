@@ -15,12 +15,12 @@ const ourServiceData = [
 const OurServices = () => {
 
     return (
-        <div className='grid gap-10'>
+        <div className='grid gap-10 lg:grid-cols-3 lg:gap-0 xl:gap-0 2xl:flex'>
             {
                 ourServiceData.map(({ id, image, name }) => {
-                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5 md:w-3/4'>
+                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5 md:w-3/4 lg:w-72 lg:mb-10 2xl:w-80'>
                         <img src={image} alt="image" className="" />
-                        <h1 className='font-mono font-semibold text-center text-lg my-4 text-teal-900 md:text-4xl'>{name}</h1>
+                        <h1 className='font-mono font-semibold text-center text-lg my-4 text-teal-900 md:text-4xl lg:text-2xl'>{name}</h1>
                     </div>
                 })
             }

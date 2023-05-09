@@ -16,8 +16,8 @@ const PreviousWorkSection = () => {
         <div className='grid gap-6 md:grid-cols-2 md:gap-0'>
             {
                 data.map(({ id, image, title, link }) => {
-                    return <div className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5 hover:text-white hover:bg-emerald-400 duration-200 md:w-[22rem] md:mb-8'>
-                        <div className='flex justify-between items-center'>
+                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5 hover:text-white hover:bg-emerald-400 duration-200 md:w-[22rem] md:mb-8 lg:w-96 xl:w-[35rem]'>
+                        <div className='flex justify-between items-center xl:justify-around'>
                             <img src={image} alt="image" className="w-14 md:w-16" />
                             <div className='text-center'>
                                 <h1 className='text-3xl font-serif uppercase md:text-4xl md:mb-2'>{title}</h1>

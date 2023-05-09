@@ -17,22 +17,22 @@ function App() {
     <>
       <HeaderNav />
       {/* hero section */}
-      <div>
+      <div className='lg:flex lg:ms-8 lg:my-28'>
         <div className='font-serif text-center my-12'>
-          <h1 className='text-lg md:text-5xl md:leading-snug mb-3 text-emerald-800 font-extrabold'>Transform Your Business With Our Software</h1>
-          <p className='text-sm md:text-2xl mb-8 text-emerald-800'>Need a customize software or website</p>
-          <button className='uppercase bg-emerald-400 py-2 px-4 rounded-xl text-white md:text-3xl md:py-4 md:px-6'>Get Started</button>
+          <h1 className='text-lg md:text-5xl md:leading-snug mb-3 text-emerald-800 font-extrabold lg:text-2xl xl:text-3xl'>Transform Your Business With Our Software</h1>
+          <p className='text-sm md:text-2xl mb-8 text-emerald-800 xl:text-xl'>Need a customize software or website</p>
+          <button className='uppercase bg-emerald-400 hover:bg-emerald-500 py-2 px-4 rounded-xl text-white md:text-3xl md:py-4 md:px-6 lg:text-xl xl:p-2'>Get Started</button>
         </div>
-        <img src={landingImage} alt="image" className="w-68 mx-auto" />
+        <img src={landingImage} alt="image" className="w-68 mx-auto lg:w-96 xl:w-[40%]" />
       </div>
 
       {/* who we are - section */}
       <h1 className='text-4xl text-center my-16 font-serif font-bold text-emerald-900 md:text-6xl'>Who We Are</h1>
-      <div>
-        <img src={whoWeArwImage} alt="image" className="w-64 mx-auto md:w-[70%]" />
-        <div>
-          <h5 className='text-xl text-center font-serif font-bold text-emerald-900 md:text-4xl'>Scale Your Business with Confidence</h5>
-          <p className='text-center p-4 text-emerald-700 font-serif md:text-2xl'>
+      <div className='lg:flex lg:items-center xl:mx-24'>
+        <img src={whoWeArwImage} alt="image" className="w-64 mx-auto md:w-[70%] lg:w-96 lg:ms-6 xl:w-1/3 xl:ms-24" />
+        <div className='xl:w-1/2'>
+          <h5 className='text-xl text-center font-serif font-bold text-emerald-900 md:text-4xl lg:text-2xl xl:text-3xl'>Scale Your Business with Confidence</h5>
+          <p className='text-center p-4 text-emerald-700 font-serif md:text-2xl lg:text-xl'>
             RSOFT is a software development company. <br /> We aims to collaborate with the clients to achieve
             their
             strategic objectives while creating long-term business value through  the delivery and
@@ -52,38 +52,34 @@ function App() {
 
       {/* our team section */}
       <h1 className='text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24'>Our Team</h1>
-      <div className='grid gap-10 justify-center md:gap-16'>
-        <div className='border-2 w-72 rounded-3xl bg-violet-200 md:w-[30rem] shadow-xl shadow-violet-400'>
+      <div className='flex flex-col mx-16 md:mx-36 lg:flex-row lg:gap-10 lg:mx-12 xl:ms-40 2xl:ms-80'>
+        <div className='border-2 w-72 mb-14 rounded-3xl bg-violet-200 md:w-[30rem] shadow-xl shadow-violet-400 lg:w-96 xl:w-80 2xl:w-96'>
           <img src={sohidulTeamImg} alt="image" className="w-72 p-1 md:w-full rounded-3xl" />
           <div className='text-center leading-8 font-serif mt-4'>
-            <h1 className='text-2xl md:text-4xl'>Sohidul Islam</h1>
-            <p className='text-slate-700 md:text-2xl md:mb-5'>Lead Desiner</p>
+            <h1 className='text-2xl md:text-4xl lg:text-2xl'>Sohidul Islam</h1>
+            <p className='text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2'>Lead Desiner</p>
           </div>
         </div>
 
-        <div className='grid justify-center'>
-          <div className='border-2 w-72 rounded-3xl bg-pink-200 md:w-[30rem] shadow-xl shadow-pink-400'>
-            <img src={rifatTeamImg} alt="image" className="w-72 p-1 md:w-full rounded-3xl" />
-            <div className='text-center leading-8 font-serif mt-4'>
-              <h1 className='text-2xl md:text-4xl'>Ahsanul Haque Rifat</h1>
-              <p className='text-slate-700 md:text-2xl md:mb-5'>Founder & Software Engineer</p>
-            </div>
+        <div className='border-2 w-72 mb-14 rounded-3xl bg-pink-200 md:w-[30rem] shadow-xl shadow-pink-400 lg:w-96 xl:w-80 2xl:w-96'>
+          <img src={rifatTeamImg} alt="image" className="w-72 p-1 md:w-full rounded-3xl" />
+          <div className='text-center leading-8 font-serif mt-4'>
+            <h1 className='text-2xl md:text-4xl lg:text-2xl'>Ahsanul Haque Rifat</h1>
+            <p className='text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2'>Founder & Software Engineer</p>
           </div>
         </div>
 
-        <div className='grid justify-center'>
-          <div className='border-2 w-72 rounded-3xl bg-blue-200 md:w-[30rem] shadow-xl shadow-blue-400'>
-            <img src={shovoTeamImg} alt="image" className="w-72 p-1 md:w-full rounded-3xl" />
-            <div className='text-center leading-8 font-serif mt-4'>
-              <h1 className='text-2xl md:text-4xl'>Syed Noman Shovo</h1>
-              <p className='text-slate-700 md:text-2xl md:mb-5'>Sells & Marketing</p>
-            </div>
+        <div className='border-2 w-72 mb-14 rounded-3xl bg-blue-200 md:w-[30rem] shadow-xl shadow-blue-400 lg:w-96 xl:w-80 2xl:w-96'>
+          <img src={shovoTeamImg} alt="image" className="w-72 p-1 md:w-full rounded-3xl" />
+          <div className='text-center leading-8 font-serif mt-4'>
+            <h1 className='text-2xl md:text-4xl lg:text-2xl'>Syed Noman Shovo</h1>
+            <p className='text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2'>Sells & Marketing</p>
           </div>
         </div>
       </div>
 
       {/* contact section */}
-      <h1 className='text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24'>Contact</h1>
+      <h1 className='text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24 xl:mb-2'>Contact</h1>
       <ContactSection />
 
       {/* footer section */}
