@@ -1,0 +1,31 @@
+import React from 'react';
+import image1 from '../../../../public/assets/vector-img/MOBILE-APPLICATION.png'
+import image2 from '../../../../public/assets/vector-img/website.png'
+import image3 from '../../../../public/assets/vector-img/software.png'
+import image4 from '../../../../public/assets/vector-img/graphic-design.png'
+import image5 from '../../../../public/assets/vector-img/animation.png'
+
+const ourServiceData = [
+    { id: 1, image: image1, name: 'Mobile Application' },
+    { id: 2, image: image2, name: 'Web Application' },
+    { id: 3, image: image3, name: 'Custom Software' },
+    { id: 4, image: image4, name: 'Graphics Design' },
+    { id: 5, image: image5, name: '3D & 2D Animation' }
+]
+const OurServices = () => {
+
+    return (
+        <div className='grid gap-10 lg:grid-cols-3 lg:gap-0 xl:gap-0 2xl:flex'>
+            {
+                ourServiceData.map(({ id, image, name }) => {
+                    return <div key={id} className='border-2 w-72 mx-auto shadow-lg shadow-emerald-400 rounded-2xl p-5 md:w-3/4 lg:w-72 lg:mb-10 2xl:w-80'>
+                        <img src={image} alt="image" className="" />
+                        <h1 className='font-mono font-semibold text-center text-lg my-4 text-teal-900 md:text-4xl lg:text-2xl'>{name}</h1>
+                    </div>
+                })
+            }
+        </div>
+    );
+};
+
+export default OurServices;
