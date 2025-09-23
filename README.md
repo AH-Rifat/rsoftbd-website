@@ -2,5 +2,5 @@
 
 ## R-softBD Company Website
 
-This Website Build By Reactjs, Inertiajs, Laravel Framework 
+This Website built by Reactjs, Inertiajs, and Laravel Framework.
 
