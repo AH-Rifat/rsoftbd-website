@@ -1,14 +1,14 @@
 // import './App.css'
-import HeaderNav from "../Pages/componannts/HeaderNav";
+import HeaderNav from "../Pages/components/HeaderNav";
 import landingImage from "../../../public/assets/vector-img/landing.png";
 import whoWeArwImage from "../../../public/assets/vector-img/who-we-are.png";
-import OurServices from "../Pages/componannts/OurServices";
+import OurServices from "../Pages/components/OurServices";
 import rifatTeamImg from "../../../public/assets/rifat.jpg";
 import sohidulTeamImg from "../../../public/assets/shohidul.jpg";
 import shovoTeamImg from "../../../public/assets/shovo.jpeg";
-import PreviousWorkSection from "../Pages/componannts/PreviousWorkSection";
-import ContactSection from "../Pages/componannts/ContactSection";
-import Footer from "./componannts/Footer";
+import PreviousWorkSection from "../Pages/components/PreviousWorkSection";
+import ContactSection from "../Pages/components/ContactSection";
+import Footer from "./components/Footer";
 
 const Home = () => {
     return (

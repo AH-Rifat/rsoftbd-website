@@ -1,5 +1,5 @@
-import Footer from "../componannts/Footer";
-import HeaderNav from "../componannts/HeaderNav";
+import Footer from "../components/Footer";
+import HeaderNav from "../components/HeaderNav";
 
 export default function PageLayout({ children }) {
     return (
