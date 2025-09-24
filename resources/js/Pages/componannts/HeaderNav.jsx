@@ -36,7 +36,7 @@ const HeaderNav = () => {
                         <ul className="md:flex">
                             <li className="mb-6">
                                 <Link
-                                    to={"/"}
+                                    href={"/"}
                                     className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
                                 >
                                     Home
@@ -44,7 +44,7 @@ const HeaderNav = () => {
                             </li>
                             <li className="mb-6">
                                 <Link
-                                    to={"/"}
+                                    href={"/"}
                                     className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
                                 >
                                     Who we are
@@ -59,10 +59,10 @@ const HeaderNav = () => {
                                     Products
                                 </span>
                                 {isDropdownOpen && (
-                                    <ul className="absolute w-fit md:w-56 top-full left-20 md:left-0 font-serif bg-white border shadow-lg rounded-lg mt-2">
+                                    <ul className="absolute w-fit md:w-56 top-full left-20 md:left-0 font-serif bg-white border shadow-lg rounded-lg mt-1">
                                         <li>
                                             <Link
-                                                to={"/gym-software"}
+                                                href="/gym-software"
                                                 className="block p-2 text-gray-800 rounded-t-lg hover:bg-slate-300"
                                             >
                                                 Gym Management Software
@@ -70,7 +70,7 @@ const HeaderNav = () => {
                                         </li>
                                         <li>
                                             <Link
-                                                to={"/pos-software"}
+                                                href={"/pos-software"}
                                                 className="block p-2 text-gray-800 hover:bg-slate-300"
                                             >
                                                 POS Software
@@ -78,7 +78,7 @@ const HeaderNav = () => {
                                         </li>
                                         <li>
                                             <Link
-                                                to={"/ecommerce-website"}
+                                                href={"/ecommerce-website"}
                                                 className="block p-2 text-gray-800 rounded-b-lg hover:bg-slate-300"
                                             >
                                                 E-commerce Website
@@ -89,7 +89,7 @@ const HeaderNav = () => {
                             </li>
                             <li className="mb-6">
                                 <Link
-                                    to={"/"}
+                                    href={"/"}
                                     className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
                                 >
                                     Service
@@ -97,7 +97,7 @@ const HeaderNav = () => {
                             </li>
                             <li className="mb-6">
                                 <Link
-                                    to={"/"}
+                                    href={"/"}
                                     className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
                                 >
                                     Contact
