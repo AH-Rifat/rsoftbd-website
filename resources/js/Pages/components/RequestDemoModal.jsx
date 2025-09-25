@@ -9,10 +9,10 @@ import { useForm } from "@inertiajs/react";
 
 export default function RequestDemoModal({ packageData }) {
     const [open, setOpen] = useState(false);
-    const { data, setData, errors, reset, processing } = useForm({
-        packageName: packageData.name,
-        productName: packageData.product,
-        productPrice: packageData.price,
+    const { data, setData, errors, post, reset, processing } = useForm({
+        package_name: packageData.name,
+        product_name: packageData.product,
+        product_price: packageData.price,
         name: "",
         email: "",
         phone: "",
@@ -22,8 +22,13 @@ export default function RequestDemoModal({ packageData }) {
 
     const handleSendDemoRequest = (e) => {
         e.preventDefault();
-        setOpen(false);
-        console.log(data);
+        post("request-product-demo", {
+            onSuccess: () => {
+                setOpen(false);
+                reset();
+            },
+            preserveScroll: true,
+        });
     };
 
     return (
