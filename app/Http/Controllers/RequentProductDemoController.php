@@ -31,4 +31,9 @@ class RequentProductDemoController extends Controller
 
         return redirect()->route('gym-software')->with('success', 'Product demo request submitted successfully.');
     }
+
+    public function requestDemoList()
+    {
+        return response()->json(RequentProductDemo::latest()->get());
+    }
 }

@@ -11,3 +11,4 @@ Route::get('/', function () {
 
 Route::get('/gym-software', [ProductPagesController::class, 'gymSoftwarePage'])->name('gym-software');
 Route::post('/request-product-demo', [RequentProductDemoController::class, 'store'])->name('request-product-demo');
+Route::get('/request-demo-list', [RequentProductDemoController::class, 'requestDemoList'])->name('request-demo-list');
