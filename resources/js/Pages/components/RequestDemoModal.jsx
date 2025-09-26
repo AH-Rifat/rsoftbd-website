@@ -62,17 +62,19 @@ export default function RequestDemoModal({ packageData }) {
                                             Package: {packageData.name}
                                         </DialogTitle>
                                         <div className="mt-4">
-                                            <form>
+                                            <form
+                                                onSubmit={handleSendDemoRequest}
+                                            >
                                                 <div className="flex flex-col gap-1 mb-4">
                                                     <label className="font-serif text-gray-700 text-base sm:text-lg">
                                                         Your Name
                                                     </label>
                                                     <input
                                                         type="text"
-                                                        className={`w-full rounded-lg border border-slate-400 focus:outline-emerald-600 p-2 ${
+                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
                                                             errors.name
                                                                 ? "border-red-500"
-                                                                : ""
+                                                                : "border-slate-400"
                                                         }`}
                                                         value={data.name}
                                                         onChange={(e) =>
@@ -95,10 +97,10 @@ export default function RequestDemoModal({ packageData }) {
                                                     </label>
                                                     <input
                                                         type="email"
-                                                        className={`w-full rounded-lg border border-slate-400 focus:outline-emerald-600 p-2 ${
+                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
                                                             errors.email
                                                                 ? "border-red-500"
-                                                                : ""
+                                                                : "border-slate-400"
                                                         }`}
                                                         value={data.email}
                                                         onChange={(e) =>
@@ -121,10 +123,10 @@ export default function RequestDemoModal({ packageData }) {
                                                     </label>
                                                     <input
                                                         type="tel"
-                                                        className={`w-full rounded-lg border border-slate-400 focus:outline-emerald-600 p-2 ${
+                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
                                                             errors.phone
                                                                 ? "border-red-500"
-                                                                : ""
+                                                                : "border-slate-400"
                                                         }`}
                                                         value={data.phone}
                                                         onChange={(e) =>
@@ -146,10 +148,10 @@ export default function RequestDemoModal({ packageData }) {
                                                         Your Message
                                                     </label>
                                                     <textarea
-                                                        className={`w-full rounded-lg border border-slate-400 focus:outline-emerald-600 p-2 ${
+                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
                                                             errors.message
                                                                 ? "border-red-500"
-                                                                : ""
+                                                                : "border-slate-400"
                                                         }`}
                                                         cols="30"
                                                         rows="4"
@@ -167,28 +169,30 @@ export default function RequestDemoModal({ packageData }) {
                                                         </span>
                                                     )}
                                                 </div>
+
+                                                <div className="flex justify-end gap-2">
+                                                    <button
+                                                        type="submit"
+                                                        className="inline-flex w-full justify-center rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700 sm:ml-3 sm:w-auto"
+                                                        disabled={processing}
+                                                    >
+                                                        Send Request
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        data-autofocus
+                                                        onClick={() =>
+                                                            setOpen(false)
+                                                        }
+                                                        className="mt-3 inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-red-300 hover:bg-red-600 sm:mt-0 sm:w-auto"
+                                                    >
+                                                        Cancel
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="bg-gray-200 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                <button
-                                    type="button"
-                                    onClick={handleSendDemoRequest}
-                                    className="inline-flex w-full justify-center rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700 sm:ml-3 sm:w-auto"
-                                    disabled={processing}
-                                >
-                                    Send Request
-                                </button>
-                                <button
-                                    type="button"
-                                    data-autofocus
-                                    onClick={() => setOpen(false)}
-                                    className="mt-3 inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-red-300 hover:bg-red-600 sm:mt-0 sm:w-auto"
-                                >
-                                    Cancel
-                                </button>
                             </div>
                         </DialogPanel>
                     </div>
