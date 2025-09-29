@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\RequentProductDemo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RequestDemoMail;
 
 class RequentProductDemoController extends Controller
 {
@@ -27,6 +29,7 @@ class RequentProductDemoController extends Controller
             return redirect()->back()->with('error', 'Product demo request allready submitted');
         }
 
+        Mail::to($validated['email'])->send(new RequestDemoMail($validated));
         $requentProductDemo->create($validated);
 
         return redirect()->route('gym-software')->with('success', 'Product demo request submitted successfully.');
