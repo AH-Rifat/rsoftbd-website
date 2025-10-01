@@ -32,7 +32,7 @@ class RequentProductDemoController extends Controller
         Mail::to($validated['email'])->send(new RequestDemoMail($validated));
         $requentProductDemo->create($validated);
 
-        return redirect()->route('gym-software')->with('success', 'Product demo request submitted successfully.');
+        return redirect()->back()->with('success', 'Product demo request submitted successfully.');
     }
 
     public function requestDemoList()
