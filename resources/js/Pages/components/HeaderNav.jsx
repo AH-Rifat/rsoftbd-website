@@ -1,123 +1,173 @@
 import { useState } from "react";
-import logo from "../../../../public/assets/vector-img/nav-logo.png";
 import { HiBars3, HiOutlineXMark } from "react-icons/hi2";
+import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "@inertiajs/react";
+import logo from "../../../../public/assets/vector-img/nav-logo.png";
 
 const HeaderNav = () => {
     const [show, setShow] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsDropdownOpen(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsDropdownOpen(false);
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
     };
 
     return (
-        <>
-            <div className="relative shadow-lg shadow-emerald-300">
-                <div className=" flex justify-between items-center mx-5">
-                    <div>
-                        <img
-                            src={logo}
-                            alt="image"
-                            className="w-20 2xl:w-[5.5rem]"
-                        />
-                    </div>
-                    <div
-                        className={
-                            show
-                                ? "absolute top-28 right-0 left-0 text-center bg-white max-w-full transition"
-                                : "absolute  bottom-24 md:top-7 md:left-52 lg:left-[29rem] xl:left-[45rem] 2xl:left-[84rem] transition"
-                        }
-                    >
-                        <ul className="md:flex">
-                            <li className="mb-6">
-                                <Link
-                                    href={"/"}
-                                    className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
-                                >
-                                    Home
-                                </Link>
-                            </li>
-                            <li className="mb-6">
-                                <Link
-                                    href={"/"}
-                                    className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
-                                >
-                                    Who we are
-                                </Link>
-                            </li>
-                            <li
-                                className="relative mb-6"
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                <span className="uppercase cursor-pointer mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150">
-                                    Products
-                                </span>
-                                {isDropdownOpen && (
-                                    <ul className="absolute w-fit md:w-56 top-full left-20 md:left-0 font-serif bg-white border shadow-lg rounded-lg mt-1">
-                                        <li>
-                                            <Link
-                                                href="/gym-software"
-                                                className="block p-2 text-gray-800 rounded-t-lg hover:bg-slate-300"
-                                            >
-                                                Gym Management Software
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href={"/pos-software"}
-                                                className="block p-2 text-gray-800 hover:bg-slate-300"
-                                            >
-                                                POS Software
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                href={"/ecommerce-website"}
-                                                className="block p-2 text-gray-800 rounded-b-lg hover:bg-slate-300"
-                                            >
-                                                E-commerce Website
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                )}
-                            </li>
-                            <li className="mb-6">
-                                <Link
-                                    href={"/"}
-                                    className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
-                                >
-                                    Service
-                                </Link>
-                            </li>
-                            <li className="mb-6">
-                                <Link
-                                    href={"/"}
-                                    className="uppercase mx-6 md:mx-2 font-serif p-2 hover:bg-slate-300 hover:rounded-lg hover:transition hover:delay-150"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+        <header className="relative shadow-md shadow-emerald-200 bg-white">
+            <div className="flex justify-between items-center px-5 md:px-14 py-4">
+                {/* Logo */}
+                <Link href="/">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="w-24 xl:w-28 2xl:w-32"
+                    />
+                </Link>
 
-                    <div className="md:hidden">
-                        <button onClick={() => setShow(!show)}>
-                            {!show ? (
-                                <HiBars3 className="text-4xl font-bold text-emerald-500"></HiBars3>
-                            ) : (
-                                <HiOutlineXMark className="text-4xl font-bold text-emerald-500"></HiOutlineXMark>
+                {/* Desktop Menu */}
+                <nav className="hidden md:block">
+                    <ul className="flex items-center space-x-6 font-serif">
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase px-3 py-2 hover:bg-emerald-200 rounded-lg transition"
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase px-3 py-2 hover:bg-emerald-200 rounded-lg transition"
+                            >
+                                Who we are
+                            </Link>
+                        </li>
+                        <li
+                            className="relative"
+                            onMouseEnter={() => setIsDropdownOpen(true)}
+                            onMouseLeave={() => setIsDropdownOpen(false)}
+                        >
+                            <span className="flex items-center gap-1 uppercase cursor-pointer px-3 py-2 hover:bg-emerald-200 rounded-lg transition">
+                                <div> Products</div> <IoIosArrowDown />
+                            </span>
+                            {isDropdownOpen && (
+                                <ul className="absolute left-0 mt-2 bg-white border shadow-lg rounded-lg w-56 z-50">
+                                    <li>
+                                        <Link
+                                            href="/gym-software"
+                                            className="block px-4 py-2 hover:bg-emerald-100 rounded-t-lg"
+                                        >
+                                            Gym Management Software
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/pos-software"
+                                            className="block px-4 py-2 hover:bg-emerald-100"
+                                        >
+                                            POS Software
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/ecommerce-website"
+                                            className="block px-4 py-2 hover:bg-emerald-100 rounded-b-lg"
+                                        >
+                                            E-commerce Website
+                                        </Link>
+                                    </li>
+                                </ul>
                             )}
-                        </button>
-                    </div>
-                </div>
+                        </li>
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase px-3 py-2 hover:bg-emerald-200 rounded-lg transition"
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className="md:hidden text-emerald-500 text-4xl"
+                    onClick={() => setShow(!show)}
+                >
+                    {show ? <HiOutlineXMark /> : <HiBars3 />}
+                </button>
             </div>
-        </>
+
+            {/* Mobile Menu */}
+            {show && (
+                <div className="md:hidden bg-white border-t shadow-inner">
+                    <ul className="flex flex-col text-center font-serif py-4">
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase block py-2 hover:bg-emerald-100"
+                            >
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase block py-2 hover:bg-emerald-100"
+                            >
+                                Who we are
+                            </Link>
+                        </li>
+                        <li>
+                            <button
+                                onClick={toggleDropdown}
+                                className="flex justify-center items-center gap-1 uppercase w-full py-2 hover:bg-emerald-100"
+                            >
+                                <div> Products</div> <IoIosArrowDown />
+                            </button>
+                            {isDropdownOpen && (
+                                <ul className="bg-gray-50 border-t border-b">
+                                    <li>
+                                        <Link
+                                            href="/gym-software"
+                                            className="uppercase block py-2 hover:bg-emerald-100"
+                                        >
+                                            Gym Management Software
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/pos-software"
+                                            className="uppercase block py-2 hover:bg-emerald-100"
+                                        >
+                                            POS Software
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/ecommerce-website"
+                                            className="uppercase block py-2 hover:bg-emerald-100"
+                                        >
+                                            E-commerce Website
+                                        </Link>
+                                    </li>
+                                </ul>
+                            )}
+                        </li>
+                        <li>
+                            <Link
+                                href="/"
+                                className="uppercase block py-2 hover:bg-emerald-100"
+                            >
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            )}
+        </header>
     );
 };
 
