@@ -1,12 +1,12 @@
 // import './App.css'
 import HeaderNav from "../Pages/components/HeaderNav";
 import landingImage from "../../../public/assets/vector-img/landing.png";
-import whoWeArwImage from "../../../public/assets/vector-img/who-we-are.png";
 import OurServices from "../Pages/components/OurServices";
 import PreviousWorkSection from "../Pages/components/PreviousWorkSection";
 import ContactSection from "../Pages/components/ContactSection";
 import Footer from "./components/Footer";
 import OurTeam from "./components/OurTeam";
+import WhoWeAreSection from "./components/WhoWeAreSection";
 
 const Home = () => {
     return (
@@ -33,28 +33,8 @@ const Home = () => {
             </div>
 
             {/* who we are - section */}
-            <h1 className="text-4xl text-center my-16 font-serif font-bold text-emerald-900 md:text-6xl">
-                Who We Are
-            </h1>
-            <div className="lg:flex lg:items-center xl:mx-24">
-                <img
-                    src={whoWeArwImage}
-                    alt="image"
-                    className="w-64 mx-auto md:w-[70%] lg:w-96 lg:ms-6 xl:w-1/3 xl:ms-24"
-                />
-                <div className="xl:w-1/2">
-                    <h5 className="text-xl text-center font-serif font-bold text-emerald-900 md:text-4xl lg:text-2xl xl:text-3xl">
-                        Scale Your Business with Confidence
-                    </h5>
-                    <p className="text-center p-4 text-emerald-700 font-serif md:text-2xl lg:text-xl">
-                        RSOFT is a software development company. <br /> We aims
-                        to collaborate with the clients to achieve their
-                        strategic objectives while creating long-term business
-                        value through the delivery and management of their
-                        marketing process to become an integral part of their
-                        success.
-                    </p>
-                </div>
+            <div className="my-40">
+                <WhoWeAreSection />
             </div>
 
             {/* our service section */}
