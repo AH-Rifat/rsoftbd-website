@@ -3,12 +3,10 @@ import HeaderNav from "../Pages/components/HeaderNav";
 import landingImage from "../../../public/assets/vector-img/landing.png";
 import whoWeArwImage from "../../../public/assets/vector-img/who-we-are.png";
 import OurServices from "../Pages/components/OurServices";
-import rifatTeamImg from "../../../public/assets/rifat.jpg";
-import sohidulTeamImg from "../../../public/assets/shohidul.jpg";
-import shovoTeamImg from "../../../public/assets/shovo.jpeg";
 import PreviousWorkSection from "../Pages/components/PreviousWorkSection";
 import ContactSection from "../Pages/components/ContactSection";
 import Footer from "./components/Footer";
+import OurTeam from "./components/OurTeam";
 
 const Home = () => {
     return (
@@ -72,64 +70,14 @@ const Home = () => {
             <PreviousWorkSection />
 
             {/* our team section */}
-            <h1 className="text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24">
-                Our Team
-            </h1>
-            <div className="flex flex-col mx-16 md:mx-36 lg:flex-row lg:gap-10 lg:mx-12 xl:ms-40 2xl:ms-80">
-                <div className="border-2 w-72 mb-14 rounded-3xl bg-violet-200 md:w-[30rem] shadow-xl shadow-violet-400 lg:w-96 xl:w-80 2xl:w-96">
-                    <img
-                        src={sohidulTeamImg}
-                        alt="image"
-                        className="w-72 p-1 md:w-full rounded-3xl"
-                    />
-                    <div className="text-center leading-8 font-serif mt-4">
-                        <h1 className="text-2xl md:text-4xl lg:text-2xl">
-                            Sohidul Islam
-                        </h1>
-                        <p className="text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2">
-                            Lead Desiner
-                        </p>
-                    </div>
-                </div>
-
-                <div className="border-2 w-72 mb-14 rounded-3xl bg-pink-200 md:w-[30rem] shadow-xl shadow-pink-400 lg:w-96 xl:w-80 2xl:w-96">
-                    <img
-                        src={rifatTeamImg}
-                        alt="image"
-                        className="w-72 p-1 md:w-full rounded-3xl"
-                    />
-                    <div className="text-center leading-8 font-serif mt-4">
-                        <h1 className="text-2xl md:text-4xl lg:text-2xl">
-                            Ahsanul Haque Rifat
-                        </h1>
-                        <p className="text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2">
-                            Founder & Software Engineer
-                        </p>
-                    </div>
-                </div>
-
-                <div className="border-2 w-72 mb-14 rounded-3xl bg-blue-200 md:w-[30rem] shadow-xl shadow-blue-400 lg:w-96 xl:w-80 2xl:w-96">
-                    <img
-                        src={shovoTeamImg}
-                        alt="image"
-                        className="w-72 p-1 md:w-full rounded-3xl"
-                    />
-                    <div className="text-center leading-8 font-serif mt-4">
-                        <h1 className="text-2xl md:text-4xl lg:text-2xl">
-                            Syed Noman Shovo
-                        </h1>
-                        <p className="text-slate-700 md:text-2xl md:mb-5 lg:text-lg lg:mt-2">
-                            Sells & Marketing
-                        </p>
-                    </div>
-                </div>
+            <div className="my-40">
+                <OurTeam />
             </div>
 
             {/* contact section */}
-            <h1 className="text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24 xl:mb-2">
-                Contact
-            </h1>
-            <ContactSection />
+            <div className="my-40">
+                <ContactSection />
+            </div>
 
             {/* footer section */}
             <Footer />
