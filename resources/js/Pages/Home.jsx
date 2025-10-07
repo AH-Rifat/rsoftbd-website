@@ -58,10 +58,9 @@ const Home = () => {
             </div>
 
             {/* our service section */}
-            <h1 className="text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24">
-                Our Service
-            </h1>
-            <OurServices />
+            <div className="my-40">
+                <OurServices />
+            </div>
 
             {/* our previous work section */}
             <h1 className="text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24">
