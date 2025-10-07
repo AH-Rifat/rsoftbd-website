@@ -28,7 +28,7 @@ const ourServiceData = [
 const OurServices = () => {
     return (
         <section className="py-12 md:py-20 bg-gradient-to-b from-white to-emerald-50">
-            <div className="container mx-auto px-4">
+            <div className="max-w-7xl mx-10 md:mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-800 mb-4">
@@ -42,7 +42,7 @@ const OurServices = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {ourServiceData.map(({ id, image, name, description }) => (
                         <div
                             key={id}
@@ -78,8 +78,6 @@ const OurServices = () => {
                         </div>
                     ))}
                 </div>
-
-                {/* CTA Section - Removed since no button needed */}
             </div>
         </section>
     );
