@@ -2,7 +2,7 @@ import landingImage from "../../../../public/assets/vector-img/landing.png";
 
 export default function HeroSection() {
     return (
-        <div className="my-12 md:my-0 md:min-h-screen flex items-center bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8 lg:py-0">
+        <div className="h-[35rem] md:min-h-screen flex items-center bg-gradient-to-br from-emerald-50 via-white to-teal-50 py-8 lg:py-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="flex flex-col md:flex-row lg:flex-row items-center lg:justify-between lg:gap-12 xl:gap-16">
                     {/* Text Content */}

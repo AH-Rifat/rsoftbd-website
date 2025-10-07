@@ -12,16 +12,9 @@ const Home = () => {
     return (
         <>
             <HeaderNav />
-            {/* hero section */}
             <HeroSection />
-
-            {/* who we are - section */}
             <WhoWeAreSection />
-
-            {/* our service section */}
-            <div className="my-40">
-                <OurServices />
-            </div>
+            <OurServices />
 
             {/* our previous work section */}
             {/* <h1 className="text-4xl text-center w-40s my-16 font-serif font-bold text-emerald-900 md:text-6xl md:my-24">
@@ -34,12 +27,7 @@ const Home = () => {
                 <OurTeam />
             </div>
 
-            {/* contact section */}
-            <div className="my-40">
-                <ContactSection />
-            </div>
-
-            {/* footer section */}
+            <ContactSection />
             <Footer />
         </>
     );
