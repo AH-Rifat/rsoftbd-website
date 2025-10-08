@@ -25,8 +25,8 @@ const HeaderNav = () => {
                 </Link>
 
                 {/* Desktop Menu */}
-                <nav className="hidden md:block">
-                    <ul className="flex items-center space-x-6 font-serif">
+                <nav className="hidden md:block absolute left-1/2 transform -translate-x-1/2">
+                    <ul className="flex items-center space-x-2 font-serif">
                         <li>
                             <Link
                                 href="/"
@@ -52,7 +52,7 @@ const HeaderNav = () => {
                                 <div> Products</div> <IoIosArrowDown />
                             </span>
                             {isDropdownOpen && (
-                                <ul className="absolute left-0 mt-2 bg-white border shadow-lg rounded-lg w-56 z-50">
+                                <ul className="absolute left-0 mt-1 bg-white border shadow-lg rounded-lg w-64 z-50">
                                     <li>
                                         <Link
                                             href="/gym-software"
@@ -82,7 +82,7 @@ const HeaderNav = () => {
                         </li>
                         <li>
                             <Link
-                                href="/"
+                                href="/contact"
                                 className="uppercase px-3 py-2 hover:bg-emerald-200 rounded-lg transition"
                             >
                                 Contact
@@ -90,6 +90,16 @@ const HeaderNav = () => {
                         </li>
                     </ul>
                 </nav>
+
+                {/* Login Button - Desktop */}
+                <div className="hidden md:block">
+                    <Link
+                        href="http://app.rsoftbd.com/login"
+                        className="uppercase px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg transition duration-200 font-medium"
+                    >
+                        Login
+                    </Link>
+                </div>
 
                 {/* Mobile Menu Button */}
                 <button
@@ -100,73 +110,103 @@ const HeaderNav = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
-            {show && (
-                <div className="md:hidden bg-white border-t shadow-inner">
-                    <ul className="flex flex-col text-center font-serif py-4">
-                        <li>
-                            <Link
-                                href="/"
-                                className="uppercase block py-2 hover:bg-emerald-100"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/"
-                                className="uppercase block py-2 hover:bg-emerald-100"
-                            >
-                                Who we are
-                            </Link>
-                        </li>
-                        <li>
-                            <button
-                                onClick={toggleDropdown}
-                                className="flex justify-center items-center gap-1 uppercase w-full py-2 hover:bg-emerald-100"
-                            >
-                                <div> Products</div> <IoIosArrowDown />
-                            </button>
-                            {isDropdownOpen && (
-                                <ul className="bg-gray-50 border-t border-b">
-                                    <li>
-                                        <Link
-                                            href="/gym-software"
-                                            className="uppercase block py-2 hover:bg-emerald-100"
-                                        >
-                                            Gym Management Software
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/pos-software"
-                                            className="uppercase block py-2 hover:bg-emerald-100"
-                                        >
-                                            POS Software
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/ecommerce-website"
-                                            className="uppercase block py-2 hover:bg-emerald-100"
-                                        >
-                                            E-commerce Website
-                                        </Link>
-                                    </li>
-                                </ul>
-                            )}
-                        </li>
-                        <li>
-                            <Link
-                                href="/"
-                                className="uppercase block py-2 hover:bg-emerald-100"
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            )}
+            {/* Mobile Menu with Smooth Animation */}
+            <div
+                className={`md:hidden bg-white border-t shadow-inner overflow-hidden transition-all duration-500 ease-in-out ${
+                    show ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
+                <ul className="flex flex-col text-center font-serif py-4">
+                    <li>
+                        <Link
+                            href="/"
+                            className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                            onClick={() => setShow(false)}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/"
+                            className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                            onClick={() => setShow(false)}
+                        >
+                            Who we are
+                        </Link>
+                    </li>
+                    <li>
+                        <button
+                            onClick={toggleDropdown}
+                            className="flex justify-center items-center gap-1 uppercase w-full py-2 hover:bg-emerald-100 transition-colors duration-200"
+                        >
+                            <div>Products</div>
+                            <IoIosArrowDown
+                                className={`transform transition-transform duration-300 ${
+                                    isDropdownOpen ? "rotate-180" : "rotate-0"
+                                }`}
+                            />
+                        </button>
+                        <div
+                            className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                isDropdownOpen
+                                    ? "max-h-40 opacity-100"
+                                    : "max-h-0 opacity-0"
+                            }`}
+                        >
+                            <ul className="bg-gray-50 border-t border-b">
+                                <li>
+                                    <Link
+                                        href="/gym-software"
+                                        className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                                        onClick={() => setShow(false)}
+                                    >
+                                        Gym Management Software
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/pos-software"
+                                        className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                                        onClick={() => setShow(false)}
+                                    >
+                                        POS Software
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        href="/ecommerce-website"
+                                        className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                                        onClick={() => setShow(false)}
+                                    >
+                                        E-commerce Website
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <Link
+                            href="/contact"
+                            className="uppercase block py-2 hover:bg-emerald-100 transition-colors duration-200"
+                            onClick={() => setShow(false)}
+                        >
+                            Contact
+                        </Link>
+                    </li>
+
+                    {/* Login Button - Mobile */}
+                    <li className="mt-2 px-4">
+                        <Link
+                            href="http://app.rsoftbd.com/login"
+                            className="uppercase block w-full py-3 bg-emerald-500 text-white hover:bg-emerald-600 rounded-lg transition duration-200 font-medium"
+                            onClick={() => setShow(false)}
+                        >
+                            Login
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </header>
     );
 };
