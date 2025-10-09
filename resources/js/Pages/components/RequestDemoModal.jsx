@@ -4,6 +4,8 @@ import {
     DialogBackdrop,
     DialogPanel,
     DialogTitle,
+    Transition,
+    TransitionChild,
 } from "@headlessui/react";
 import { useForm } from "@inertiajs/react";
 
@@ -31,6 +33,15 @@ export default function RequestDemoModal({ packageData }) {
         });
     };
 
+    const handleCloseBtnClick = () => {
+        setOpen(false);
+        errors.name = "";
+        errors.email = "";
+        errors.phone = "";
+        errors.message = "";
+        reset();
+    };
+
     return (
         <div>
             <button
@@ -40,164 +51,185 @@ export default function RequestDemoModal({ packageData }) {
                 Request a Demo
             </button>
 
-            <Dialog open={open} onClose={setOpen} className="relative z-10">
-                <DialogBackdrop
-                    transition
-                    className="fixed inset-0 bg-gray-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"
-                />
+            <Transition show={open}>
+                <Dialog onClose={setOpen} className="relative z-10">
+                    <TransitionChild
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <DialogBackdrop className="fixed inset-0 bg-gray-900/50" />
+                    </TransitionChild>
 
-                <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                        <DialogPanel
-                            transition
-                            className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all data-closed:translate-y-4 data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in sm:my-8 sm:w-full sm:max-w-lg data-closed:sm:translate-y-0 data-closed:sm:scale-95"
-                        >
-                            <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                <div className="flex flex-col sm:flex-row items-start rounded-lg">
-                                    <div className="w-full text-center sm:text-left">
-                                        <DialogTitle
-                                            as="h3"
-                                            className="text-lg sm:text-xl font-serif font-semibold text-emerald-900"
-                                        >
-                                            Package: {packageData.name}
-                                        </DialogTitle>
-                                        <div className="mt-4">
-                                            <form
-                                                onSubmit={handleSendDemoRequest}
+                    <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center p-3 sm:p-4 text-center">
+                            <TransitionChild
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            >
+                                <DialogPanel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-[95vw] sm:max-w-lg mx-auto">
+                                    <div className="bg-white px-3 sm:px-6 py-4 sm:py-5">
+                                        <div className="w-full">
+                                            <DialogTitle
+                                                as="h3"
+                                                className="text-lg font-semibold text-emerald-900 text-center sm:text-left"
                                             >
-                                                <div className="flex flex-col gap-1 mb-4">
-                                                    <label className="font-serif text-gray-700 text-base sm:text-lg">
-                                                        Your Name
-                                                    </label>
-                                                    <input
-                                                        type="text"
-                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
-                                                            errors.name
-                                                                ? "border-red-500"
-                                                                : "border-slate-400"
-                                                        }`}
-                                                        value={data.name}
-                                                        onChange={(e) =>
-                                                            setData(
-                                                                "name",
-                                                                e.target.value
-                                                            )
-                                                        }
-                                                    />
-                                                    {errors.name && (
-                                                        <span className="text-red-500 text-sm">
-                                                            {errors.name}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                Package: {packageData.name}
+                                            </DialogTitle>
+                                            <div className="mt-3 sm:mt-4">
+                                                <form
+                                                    onSubmit={
+                                                        handleSendDemoRequest
+                                                    }
+                                                >
+                                                    <div className="flex flex-col gap-1 mb-3 sm:mb-4">
+                                                        <label className="text-gray-700 text-sm sm:text-base">
+                                                            Your Name
+                                                        </label>
+                                                        <input
+                                                            type="text"
+                                                            className={`w-full rounded-lg border focus:outline-emerald-600 p-2 text-sm sm:text-base ${
+                                                                errors.name
+                                                                    ? "border-red-500"
+                                                                    : "border-slate-400"
+                                                            }`}
+                                                            value={data.name}
+                                                            onChange={(e) =>
+                                                                setData(
+                                                                    "name",
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        />
+                                                        {errors.name && (
+                                                            <span className="text-red-500 text-xs sm:text-sm">
+                                                                {errors.name}
+                                                            </span>
+                                                        )}
+                                                    </div>
 
-                                                <div className="flex flex-col gap-1 mb-4">
-                                                    <label className="font-serif text-gray-700 text-base sm:text-lg">
-                                                        Your Email
-                                                    </label>
-                                                    <input
-                                                        type="email"
-                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
-                                                            errors.email
-                                                                ? "border-red-500"
-                                                                : "border-slate-400"
-                                                        }`}
-                                                        value={data.email}
-                                                        onChange={(e) =>
-                                                            setData(
-                                                                "email",
-                                                                e.target.value
-                                                            )
-                                                        }
-                                                    />
-                                                    {errors.email && (
-                                                        <span className="text-red-500 text-sm">
-                                                            {errors.email}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                    <div className="flex flex-col gap-1 mb-3 sm:mb-4">
+                                                        <label className="text-gray-700 text-sm sm:text-base">
+                                                            Your Email
+                                                        </label>
+                                                        <input
+                                                            type="email"
+                                                            className={`w-full rounded-lg border focus:outline-emerald-600 p-2 text-sm sm:text-base ${
+                                                                errors.email
+                                                                    ? "border-red-500"
+                                                                    : "border-slate-400"
+                                                            }`}
+                                                            value={data.email}
+                                                            onChange={(e) =>
+                                                                setData(
+                                                                    "email",
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        />
+                                                        {errors.email && (
+                                                            <span className="text-red-500 text-xs sm:text-sm">
+                                                                {errors.email}
+                                                            </span>
+                                                        )}
+                                                    </div>
 
-                                                <div className="flex flex-col gap-1 mb-4">
-                                                    <label className="font-serif text-gray-700 text-base sm:text-lg">
-                                                        Your Phone Number
-                                                    </label>
-                                                    <input
-                                                        type="tel"
-                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
-                                                            errors.phone
-                                                                ? "border-red-500"
-                                                                : "border-slate-400"
-                                                        }`}
-                                                        value={data.phone}
-                                                        onChange={(e) =>
-                                                            setData(
-                                                                "phone",
-                                                                e.target.value
-                                                            )
-                                                        }
-                                                    />
-                                                    {errors.phone && (
-                                                        <span className="text-red-500 text-sm">
-                                                            {errors.phone}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                    <div className="flex flex-col gap-1 mb-3 sm:mb-4">
+                                                        <label className="text-gray-700 text-sm sm:text-base">
+                                                            Your Phone Number
+                                                        </label>
+                                                        <input
+                                                            type="tel"
+                                                            className={`w-full rounded-lg border focus:outline-emerald-600 p-2 text-sm sm:text-base ${
+                                                                errors.phone
+                                                                    ? "border-red-500"
+                                                                    : "border-slate-400"
+                                                            }`}
+                                                            value={data.phone}
+                                                            onChange={(e) =>
+                                                                setData(
+                                                                    "phone",
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        />
+                                                        {errors.phone && (
+                                                            <span className="text-red-500 text-xs sm:text-sm">
+                                                                {errors.phone}
+                                                            </span>
+                                                        )}
+                                                    </div>
 
-                                                <div className="flex flex-col gap-1 mb-4">
-                                                    <label className="font-serif text-gray-700 text-base sm:text-lg">
-                                                        Your Message
-                                                    </label>
-                                                    <textarea
-                                                        className={`w-full rounded-lg border focus:outline-emerald-600 p-2 ${
-                                                            errors.message
-                                                                ? "border-red-500"
-                                                                : "border-slate-400"
-                                                        }`}
-                                                        cols="30"
-                                                        rows="4"
-                                                        value={data.message}
-                                                        onChange={(e) =>
-                                                            setData(
-                                                                "message",
-                                                                e.target.value
-                                                            )
-                                                        }
-                                                    ></textarea>
-                                                    {errors.message && (
-                                                        <span className="text-red-500 text-sm">
-                                                            {errors.message}
-                                                        </span>
-                                                    )}
-                                                </div>
+                                                    <div className="flex flex-col gap-1 mb-3 sm:mb-4">
+                                                        <label className="text-gray-700 text-sm sm:text-base">
+                                                            Your Message
+                                                        </label>
+                                                        <textarea
+                                                            className={`w-full rounded-lg border focus:outline-emerald-600 p-2 text-sm sm:text-base ${
+                                                                errors.message
+                                                                    ? "border-red-500"
+                                                                    : "border-slate-400"
+                                                            }`}
+                                                            cols="30"
+                                                            rows="3"
+                                                            value={data.message}
+                                                            onChange={(e) =>
+                                                                setData(
+                                                                    "message",
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></textarea>
+                                                        {errors.message && (
+                                                            <span className="text-red-500 text-xs sm:text-sm">
+                                                                {errors.message}
+                                                            </span>
+                                                        )}
+                                                    </div>
 
-                                                <div className="flex justify-end gap-2">
-                                                    <button
-                                                        type="submit"
-                                                        className="inline-flex w-full justify-center rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700 sm:ml-3 sm:w-auto"
-                                                        disabled={processing}
-                                                    >
-                                                        Send Request
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        data-autofocus
-                                                        onClick={() =>
-                                                            setOpen(false)
-                                                        }
-                                                        className="mt-3 inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-red-300 hover:bg-red-600 sm:mt-0 sm:w-auto"
-                                                    >
-                                                        Cancel
-                                                    </button>
-                                                </div>
-                                            </form>
+                                                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end">
+                                                        <button
+                                                            type="submit"
+                                                            className="inline-flex justify-center rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50 transition-colors duration-200 w-full sm:w-auto order-2 sm:order-1"
+                                                            disabled={
+                                                                processing
+                                                            }
+                                                        >
+                                                            {processing
+                                                                ? "Sending..."
+                                                                : "Send Request"}
+                                                        </button>
+                                                        <button
+                                                            type="button"
+                                                            onClick={
+                                                                handleCloseBtnClick
+                                                            }
+                                                            className="inline-flex justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-600 transition-colors duration-200 w-full sm:w-auto order-1 sm:order-2"
+                                                        >
+                                                            Cancel
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </DialogPanel>
+                                </DialogPanel>
+                            </TransitionChild>
+                        </div>
                     </div>
-                </div>
-            </Dialog>
+                </Dialog>
+            </Transition>
         </div>
     );
 }
