@@ -62,7 +62,7 @@ export default function OurTeam() {
             </div>
 
             {/* Team Grid Container */}
-            <div className="mx-10 md:flex justify-center">
+            <div className="mx-5 md:flex justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 px-4 sm:px-6 lg:px-8">
                     {displayedMembers.map((member, index) => (
                         <div

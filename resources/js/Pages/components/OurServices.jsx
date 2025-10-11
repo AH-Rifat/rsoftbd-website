@@ -28,7 +28,7 @@ const ourServiceData = [
 const OurServices = () => {
     return (
         <section className="py-12 md:py-20 bg-gradient-to-b from-white to-emerald-50">
-            <div className="max-w-7xl mx-10 md:mx-auto px-4">
+            <div className="max-w-7xl mx-5 md:mx-auto px-4">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-800 mb-4">

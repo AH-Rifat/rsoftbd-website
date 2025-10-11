@@ -119,7 +119,7 @@ export default function GymSoftwarePage() {
         <PageLayout>
             {/* Simple Hero Section */}
             <div className="bg-white py-12">
-                <div className="max-w-4xl mx-10 md:mx-auto px-4 text-center">
+                <div className="max-w-4xl mx-5 md:mx-auto px-4 text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                         জিম ম্যানেজমেন্ট সফটওয়্যার
                     </h1>
@@ -154,7 +154,7 @@ export default function GymSoftwarePage() {
 
             {/* Features Section */}
             <section className="py-16 md:py-20 bg-white">
-                <div className="max-w-7xl mx-10 md:mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-5 md:mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                             সকল ফিচারস একসাথে

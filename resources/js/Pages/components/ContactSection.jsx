@@ -11,7 +11,7 @@ const ContactSection = ({ className }) => {
                 <div className="w-20 h-1 bg-emerald-500 mx-auto rounded-full"></div>
             </div>
 
-            <div className="max-w-7xl mx-10 px-4 sm:px-6 py-8 sm:py-12 md:mx-auto md:flex md:items-center md:justify-between md:gap-8 lg:gap-12">
+            <div className="max-w-7xl mx-5 px-4 sm:px-6 py-8 sm:py-12 md:mx-auto md:flex md:items-center md:justify-between md:gap-8 lg:gap-12">
                 {/* Contact Form Section */}
                 <div className="md:flex-1">
                     <form className="space-y-4 sm:space-y-6">

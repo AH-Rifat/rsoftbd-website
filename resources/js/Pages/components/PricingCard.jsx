@@ -17,7 +17,7 @@ export default function PricingCard({ plans }) {
                     </div>
 
                     {/* Pricing Plans - Responsive Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 max-w-7xl mx-10 md:mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 max-w-7xl mx-5 md:mx-auto">
                         {plans.map((plan, index) => (
                             <div
                                 key={index}
