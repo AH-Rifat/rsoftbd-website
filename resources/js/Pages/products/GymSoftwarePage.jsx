@@ -1,5 +1,5 @@
+import AppHead from "../components/AppHead";
 import PricingCard from "../components/PricingCard";
-import RequestDemoModal from "../components/RequestDemoModal";
 import PageLayout from "../layouts/Page-layout";
 
 export default function GymSoftwarePage() {
@@ -117,6 +117,19 @@ export default function GymSoftwarePage() {
 
     return (
         <PageLayout>
+            <AppHead
+                // Bengali SEO
+                title="Gym Software"
+                keywords="জিম ম্যানেজমেন্ট সফটওয়্যার, জিম সফটওয়্যার বাংলাদেশ, ফিটনেস সেন্টার সফটওয়্যার, জিম মেম্বার ম্যানেজমেন্ট, জিম পেমেন্ট সিস্টেম, জিম অ্যাটেনডেন্স ট্র্যাকিং, জিম রিপোর্টিং সফটওয়্যার, বাংলাদেশী জিম সফটওয়্যার, সাশ্রয়ী জিম সফটওয়্যার, ক্লাউড জিম সফটওয়্যার"
+                description="বাংলাদেশের প্রথম সম্পূর্ণ বাংলা জিম ম্যানেজমেন্ট সফটওয়্যার। সদস্য রেজিস্ট্রেশন, পেমেন্ট ম্যানেজমেন্ট, অ্যাটেনডেন্স ট্র্যাকিং, অটোমেটেড রিমাইন্ডার, ডিটেইলড রিপোর্ট এবং মোবাইল অ্যাপ সহ সম্পূর্ণ সমাধান। ৩০ দিন ফ্রি ট্রায়াল নিন!"
+                // English SEO
+                titleEn="Gym Management Software Bangladesh - Complete Fitness Solution"
+                keywordsEn="gym management software Bangladesh, fitness center software Dhaka, gym member management system, gym payment software, attendance tracking software, gym reporting tools, Bangladeshi gym software, affordable gym management, cloud gym software, gym automation Bangladesh"
+                descriptionEn="Bangladesh's first complete Bengali & English Gym Management Software. Member registration, payment management, attendance tracking, automated reminders, detailed reports with mobile app. Get 30 days free trial for your gym business!"
+                // Common SEO
+                canonicalUrl="https://rsoftbd.com/gym-software"
+                ogType="product"
+            />
             {/* Simple Hero Section */}
             <div className="bg-white py-12">
                 <div className="max-w-4xl mx-5 md:mx-auto px-4 text-center">
