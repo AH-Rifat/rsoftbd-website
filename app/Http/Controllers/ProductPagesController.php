@@ -10,4 +10,9 @@ class ProductPagesController extends Controller
     {
         return inertia('products/GymSoftwarePage');
     }
+
+    public function posSoftwarePage()
+    {
+        return inertia('products/PosSoftwarePage');
+    }
 }
