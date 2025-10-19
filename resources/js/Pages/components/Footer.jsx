@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react";
 import footerLogo from "../../../../public/assets/logo.png";
+import whatsappIcon from "../../../../public/assets/applications_whatsapp_icon.png";
 import {
     FaFacebookSquare,
     FaInstagramSquare,
@@ -179,7 +180,20 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-
+                {/* WhatsApp Icon */}
+                <div className="text-8xl fixed bottom-8 right-8 hover:scale-125 transition-transform duration-300 delay-75 z-50">
+                    <a
+                        href="https://wa.me/+8801920770880"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={whatsappIcon}
+                            alt="WhatsApp"
+                            className="w-12 h-12"
+                        />
+                    </a>
+                </div>
                 {/* Copyright Section */}
                 <div className="text-center border-t border-emerald-200 pt-6">
                     <p className="text-gray-600 text-sm md:text-base">

@@ -48,7 +48,7 @@ const HeaderNav = () => {
                             onMouseEnter={() => setIsDropdownOpen(true)}
                             onMouseLeave={() => setIsDropdownOpen(false)}
                         >
-                            <span className="flex items-center gap-1 uppercase cursor-pointer px-3 py-2 hover:bg-emerald-200 rounded-lg transition">
+                            <span className="flex items-center gap-1 uppercase cursor-pointer px-3 py-2 hover:bg-emerald-200 rounded-lg transition delay-100">
                                 <div> Products</div> <IoIosArrowDown />
                             </span>
                             {isDropdownOpen && (
@@ -94,7 +94,7 @@ const HeaderNav = () => {
                 {/* Login Button - Desktop */}
                 <div className="hidden md:block">
                     <Link
-                        href="http://app.rsoftbd.com/login"
+                        href="https://app.rsoftbd.com/login"
                         className="uppercase px-5 py-2 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white rounded-lg transition duration-200 font-medium"
                     >
                         Login
