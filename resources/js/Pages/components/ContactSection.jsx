@@ -14,44 +14,49 @@ const ContactSection = ({ className }) => {
             <div className="max-w-7xl mx-5 px-4 sm:px-6 py-8 sm:py-12 md:mx-auto md:flex md:items-center md:justify-between md:gap-8 lg:gap-12">
                 {/* Contact Form Section */}
                 <div className="md:flex-1">
-                    <form className="space-y-4 sm:space-y-6">
-                        <div className="flex flex-col gap-1 sm:gap-2">
-                            <label className="font-serif text-gray-600 text-base sm:text-lg font-medium">
-                                Your Name
-                            </label>
+                    <form className="space-y-3 sm:space-y-4">
+                        <div className="flex flex-col gap-1">
+                            <label className="form-label">Your Name</label>
                             <input
                                 type="text"
-                                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border-2 border-gray-300 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-200 placeholder-gray-400 text-sm sm:text-base"
+                                className="form-input"
                                 placeholder="Enter your full name"
                                 aria-required="true"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-1 sm:gap-2">
-                            <label className="font-serif text-gray-600 text-base sm:text-lg font-medium">
-                                Your Email
-                            </label>
+                        <div className="flex flex-col gap-1">
+                            <label className="form-label">Your Email</label>
                             <input
                                 type="email"
-                                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border-2 border-gray-300 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-200 placeholder-gray-400 text-sm sm:text-base"
+                                className="form-input"
                                 placeholder="Enter your email address"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-1 sm:gap-2">
-                            <label className="font-serif text-gray-600 text-base sm:text-lg font-medium">
-                                Your Message
+                        <div className="flex flex-col gap-1">
+                            <label className="form-label">
+                                Your Phone Number
                             </label>
+                            <input
+                                type="tel"
+                                className="form-input"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-1">
+                            <label className="form-label">Your Message</label>
                             <textarea
-                                className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border-2 border-gray-300 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 transition-all duration-200 placeholder-gray-400 resize-none text-sm sm:text-base"
-                                rows={4}
+                                className="form-input resize-none"
+                                rows={3}
                                 placeholder="Write your message here..."
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all duration-200 transform hover:scale-105 focus:scale-95 text-sm sm:text-base md:text-lg shadow-md sm:shadow-lg hover:shadow-emerald-200"
+                            className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 ease-in-out hover:translate-y-[-2px] active:translate-y-0 shadow-md hover:shadow-lg border border-emerald-400/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1"
                         >
                             Send Message
                         </button>
