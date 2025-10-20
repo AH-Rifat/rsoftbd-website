@@ -39,9 +39,12 @@ export default function AppHead({
 
             {/* Structured Data */}
             {structuredData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(structuredData),
+                    }}
+                ></script>
             )}
         </Head>
     );
