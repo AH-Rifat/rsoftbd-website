@@ -1,4 +1,4 @@
-import { Head, Link, usePage } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 
 export default function AppHead({
     title,
@@ -6,46 +6,60 @@ export default function AppHead({
     description,
     canonicalUrl,
     ogImage,
-    ogType = "website, software, technology, services",
+    ogType = "website",
     twitterCard = "summary_large_image",
     structuredData,
+    twitterSite = "@rsoftbd",
+    twitterCreator = "@rsoftbd",
 }) {
     const { url } = usePage();
+
     const currentUrl = canonicalUrl || url;
 
     return (
-        <Head title={title}>
-            {/* Basic Meta Tags */}
-            <meta name="keywords" content={keywords} />
-            <meta name="description" content={description} />
+        <>
+            {/* Canonical Link Head-এর বাইরে */}
+            <link rel="canonical" href={currentUrl} />
 
-            {/* Open Graph */}
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:url" content={currentUrl} />
-            <meta property="og:type" content={ogType} />
-            <meta property="og:site_name" content="R-softBD" />
+            <Head title={title}>
+                {/* Basic Meta Tags */}
+                <meta name="keywords" content={keywords} />
+                <meta name="description" content={description} />
 
-            {ogImage && <meta property="og:image" content={ogImage} />}
+                {/* Open Graph */}
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:url" content={currentUrl} />
+                <meta property="og:type" content={ogType} />
+                <meta property="og:site_name" content="R-softBD" />
 
-            {/* Twitter Card */}
-            <meta name="twitter:card" content={twitterCard} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            {ogImage && <meta name="twitter:image" content={ogImage} />}
+                {ogImage && (
+                    <>
+                        <meta property="og:image" content={ogImage} />
+                        <meta property="og:image:width" content="1200" />
+                        <meta property="og:image:height" content="630" />
+                        <meta property="og:image:alt" content={description} />
+                    </>
+                )}
 
-            {/* Canonical */}
-            <Link rel="canonical" href={currentUrl} />
+                {/* Twitter Card */}
+                <meta name="twitter:card" content={twitterCard} />
+                <meta name="twitter:site" content={twitterSite} />
+                <meta name="twitter:creator" content={twitterCreator} />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-            {/* Structured Data */}
-            {structuredData && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(structuredData),
-                    }}
-                ></script>
-            )}
-        </Head>
+                {/* Structured Data */}
+                {structuredData && (
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(structuredData),
+                        }}
+                    />
+                )}
+            </Head>
+        </>
     );
 }
