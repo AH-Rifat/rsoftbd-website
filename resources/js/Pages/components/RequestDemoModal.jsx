@@ -8,6 +8,7 @@ import {
     TransitionChild,
 } from "@headlessui/react";
 import { useForm } from "@inertiajs/react";
+import { toast } from "react-toastify";
 
 export default function RequestDemoModal({ packageData }) {
     const [open, setOpen] = useState(false);
@@ -28,6 +29,9 @@ export default function RequestDemoModal({ packageData }) {
             onSuccess: () => {
                 setOpen(false);
                 reset();
+            },
+            onError: (errors) => {
+                toast.error(`Please fix the errors and try again.`);
             },
             preserveScroll: true,
         });
