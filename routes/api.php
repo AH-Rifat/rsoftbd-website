@@ -13,4 +13,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
+Route::get('/product-price-plans', [ProductPricePlanController::class, 'index'])->name('product-price-plans.index');
 Route::post('/product-price-plans', [ProductPricePlanController::class, 'store'])->name('product-price-plans.store');

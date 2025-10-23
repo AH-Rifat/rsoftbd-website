@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class ProductPricePlanController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:sanctum');
+    // }
+
+    public function index()
+    {
+        return response()->json(['data' => ProductPricePlan::orderBy('id', 'desc')->get()], 200);
+    }
+
     public function store(Request $request)
     {
         try {
