@@ -6,55 +6,55 @@ import PageLayout from "../layouts/Page-layout";
 export default function GymSoftwarePage() {
     const plans = [
         {
-            name: "বেসিক",
-            price: "১৯,৫০০",
-            period: "ওয়ান-টাইম",
+            name: "Basic",
+            price: "19500",
+            period: "One-Time",
             product: "gym-software",
             features: [
-                "২ হাজার মেম্বার ম্যানেজ করা যাবে",
-                "অফলাইনে পেমেন্ট নেয়া যাবে",
-                "মেম্বার এটেনডেন্স ট্র্যাক করা যাবে",
-                "SMS সিস্টেম ইন্টিগ্রেটেড থাকবে",
-                "মেম্বারশিপ প্যাকেজ ট্রেকিং করা যাবে",
-                "২ জন ব্যবহারকারী একসাথে ব্যবহার করতে পারবে",
-                "24/7 কাস্টমার সাপোর্ট",
-                "বেসিক ফাইন্যান্সিয়াল রিপোর্টিং",
+                "Can manage 2,000 members",
+                "Can accept payments offline",
+                "Member attendance can be tracked",
+                "SMS system integrated",
+                "Membership package tracking",
+                "2 users can use simultaneously",
+                "24/7 customer support",
+                "Basic financial reporting",
             ],
         },
         {
-            name: "প্রিমিয়াম",
-            price: "২৯,৫০০",
-            period: "ওয়ান-টাইম",
+            name: "Premium",
+            price: "29500",
+            period: "One-Time",
             product: "gym-software",
             popular: true,
             features: [
-                "৫ হাজার মেম্বার ম্যানেজ করা যাবে",
-                "অনলাইন / অফলাইনে পেমেন্ট নেয়া যাবে",
-                "মেম্বার এটেনডেন্স ট্র্যাক করা যাবে",
-                "SMS সিস্টেম ইন্টিগ্রেটেড থাকবে",
-                "মেম্বারশিপ প্যাকেজ ট্রেকিং করা যাবে",
-                "৫ জন ব্যবহারকারী একসাথে ব্যবহার করতে পারবে",
-                "24/7 প্রায়োরিটি সাপোর্ট",
-                "এডভান্সড ফাইন্যান্সিয়াল রিপোর্টিং",
-                "বিজনেস গ্রোথ অ্যানালিটিক্স",
+                "Can manage 5,000 members",
+                "Can accept payments online/offline",
+                "Member attendance can be tracked",
+                "SMS system integrated",
+                "Membership package tracking",
+                "5 users can use simultaneously",
+                "24/7 priority support",
+                "Advanced financial reporting",
+                "Business growth analytics",
             ],
         },
         {
-            name: "এন্টারপ্রাইজ",
-            price: "৯৯,৫০০",
-            period: "ওয়ান-টাইম",
+            name: "Enterprise",
+            price: "99500",
+            period: "One-Time",
             product: "gym-software",
             features: [
-                "২০+ মেম্বার ম্যানেজ করা যাবে",
-                "অনলাইন / অফলাইনে পেমেন্ট নেয়া যাবে",
-                "মেম্বার এটেনডেন্স ট্র্যাক করা যাবে",
-                "SMS সিস্টেম ইন্টিগ্রেটেড থাকবে",
-                "মেম্বারশিপ প্যাকেজ ট্রেকিং করা যাবে",
-                "১০+ জন ব্যবহারকারী একসাথে ব্যবহার করতে পারবে",
-                "24/7 ডেডিকেটেড সাপোর্ট",
-                "কমপ্লিট বিজনেস ইন্টেলিজেন্স",
-                "কাস্টমাইজড রিপোর্টিং",
-                "API এক্সেস",
+                "Can manage 20,000+ members",
+                "Can accept payments online/offline",
+                "Member attendance can be tracked",
+                "SMS system integrated",
+                "Membership package tracking",
+                "10+ users can use simultaneously",
+                "24/7 dedicated support",
+                "Complete business intelligence",
+                "Customized reporting",
+                "API access",
             ],
         },
     ];
@@ -62,56 +62,56 @@ export default function GymSoftwarePage() {
     const features = [
         {
             icon: "👥",
-            title: "সদস্য ব্যবস্থাপনা",
+            title: "Member Management",
             items: [
-                "স্থায়ী সদস্য ডাটাবেস",
-                "ক্যাটাগরি ভিত্তিক তালিকা",
-                "এক ক্লিক কমিউনিকেশন",
+                "Permanent member database",
+                "Category-based listing",
+                "One-click communication",
             ],
         },
         {
             icon: "💳",
-            title: "পেমেন্ট সিস্টেম",
+            title: "Payment System",
             items: [
-                "অনলাইন/অফলাইন পেমেন্ট",
-                "অটোমেটেড রিমাইন্ডার",
-                "বকেয়া ট্র্যাকিং",
+                "Online/offline payments",
+                "Automated reminders",
+                "Due payment tracking",
             ],
         },
         {
             icon: "📊",
-            title: "ফাইন্যান্সিয়াল রিপোর্ট",
+            title: "Financial Reports",
             items: [
-                "আয়-ব্যয় রিপোর্ট",
-                "বিজনেস গ্রোথ অ্যানালিসিস",
-                "ROI ক্যালকুলেশন",
+                "Income-expense reports",
+                "Business growth analysis",
+                "ROI calculation",
             ],
         },
         {
             icon: "✅",
-            title: "অ্যাটেনডেন্স ট্র্যাকিং",
+            title: "Attendance Tracking",
             items: [
-                "রিয়েল-টাইম উপস্থিতি",
-                "অনিয়মিত সদস্য চিহ্নিতকরণ",
-                "অটোমেটেড রিপোর্ট",
+                "Real-time attendance",
+                "Identifying irregular members",
+                "Automated reports",
             ],
         },
         {
             icon: "🎯",
-            title: "প্যাকেজ ম্যানেজমেন্ট",
+            title: "Package Management",
             items: [
-                "প্যাকেজ অফার ম্যানেজমেন্ট",
-                "সদস্যের প্যাকেজ হিস্ট্রি",
-                "প্যাকেজ রেনুয়াল রিমাইন্ডার",
+                "Package offer management",
+                "Member's package history",
+                "Package renewal reminders",
             ],
         },
         {
             icon: "🔔",
-            title: "নোটিফিকেশন",
+            title: "Notification",
             items: [
-                "এসএমএস ও ইমেইল অ্যালার্ট",
-                "বাল্ক মেসেজিং",
-                "কাস্টমাইজড নোটিফিকেশন",
+                "SMS and email alerts",
+                "Bulk messaging",
+                "Customized notifications",
             ],
         },
     ];
@@ -135,21 +135,21 @@ export default function GymSoftwarePage() {
             <div className="bg-white py-12">
                 <div className="max-w-4xl mx-5 md:mx-auto px-4 text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        জিম ম্যানেজমেন্ট সফটওয়্যার
+                        Gym Management Software
                     </h1>
                     <p className="text-lg text-gray-600 mb-8">
-                        আপনার জিম ব্যবস্থাপনা সহজ এবং কার্যকর করুন
+                        Simplify and optimize your gym management
                     </p>
 
                     <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
                         <h2 className="text-xl font-semibold text-emerald-800 mb-3">
-                            কেন আমাদের পিওএস সফটওয়্যার বেছে নিবেন?
+                            Why Choose Our POS Software?
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {[
-                                "স্ট্যান্ডার্ড সহজ সফটওয়্যার",
-                                "সিকিউর ডাটা প্রোটেকশন",
-                                "মোবাইল ফ্রেন্ডলি",
+                                "Standard easy software",
+                                "Secure data protection",
+                                "Mobile friendly",
                             ].map((item, index) => (
                                 <div
                                     key={index}
@@ -167,8 +167,10 @@ export default function GymSoftwarePage() {
             </div>
             {/* Features Section */}
             <FeaturesSection
-                title={"সকল ফিচারস একসাথে"}
-                description={"আপনার জিম ব্যবস্থাপনাকে করুণ আরও সহজ এবং কার্যকর"}
+                title={"All Features Together"}
+                description={
+                    "Make your gym management even easier and more effective"
+                }
                 featuresData={features}
             />
             {/* Pricing Section */}
