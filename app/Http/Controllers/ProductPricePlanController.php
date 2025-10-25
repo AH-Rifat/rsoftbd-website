@@ -36,4 +36,47 @@ class ProductPricePlanController extends Controller
             return response()->json(['message' => 'Failed to create product price plan', 'error' => $th->getMessage()], 500);
         }
     }
+
+    public function edit($id)
+    {
+        try {
+            $plan = ProductPricePlan::findOrFail($id);
+            return response()->json(['data' => $plan], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Product price plan not found', 'error' => $th->getMessage()], 404);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $validated = $request->validate([
+                'name' => 'sometimes|required|string|max:255',
+                'price' => 'sometimes|required|numeric',
+                'period' => 'sometimes|required|string|max:100',
+                'product' => 'sometimes|required|string|max:100',
+                'popular' => 'sometimes|boolean',
+                'features' => 'sometimes|required|array',
+            ]);
+
+            $plan = ProductPricePlan::findOrFail($id);
+            $plan->update($validated);
+
+            return response()->json(['message' => 'Product price plan updated successfully'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Failed to update product price plan', 'error' => $th->getMessage()], 500);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $plan = ProductPricePlan::findOrFail($id);
+            $plan->delete();
+
+            return response()->json(['message' => 'Product price plan deleted successfully'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Failed to delete product price plan', 'error' => $th->getMessage()], 500);
+        }
+    }
 }
