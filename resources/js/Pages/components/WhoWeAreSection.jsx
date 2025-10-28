@@ -3,7 +3,7 @@ import whoWeAreImage from "../../../../public/assets/vector-img/who-we-are.png";
 export default function WhoWeAreSection() {
     return (
         <section className="py-16 bg-gradient-to-br from-emerald-50 to-white">
-            <div className="max-w-7xl mx-5 px-4 lg:px-8 xl:px-16">
+            <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-16">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     {/* Image Section */}
                     <div className="flex-1 relative">
