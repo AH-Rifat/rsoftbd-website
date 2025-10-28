@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductPricePlan;
 use Illuminate\Http\Request;
 
 class ProductPagesController extends Controller
 {
     public function gymSoftwarePage()
     {
-        return inertia('products/GymSoftwarePage');
+        $plans = ProductPricePlan::where('product', 'gym-software')->get();
+        return inertia('products/GymSoftwarePage', compact('plans'));
     }
 
     public function posSoftwarePage()

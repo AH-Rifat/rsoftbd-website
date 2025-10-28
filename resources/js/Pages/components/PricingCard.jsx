@@ -30,7 +30,7 @@ export default function PricingCard({ plans }) {
                                 }`}
                             >
                                 {/* Popular Badge with Animation */}
-                                {plan.popular && (
+                                {plan.popular === 1 && (
                                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
                                         <span className="bg-gradient-to-r from-emerald-500 to-emerald-500 text-white px-4 py-1 rounded-full text-xs sm:text-sm font-bold shadow-lg">
                                             Most Popular

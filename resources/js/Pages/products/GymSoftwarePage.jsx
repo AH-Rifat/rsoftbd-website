@@ -3,62 +3,7 @@ import FeaturesSection from "../components/FeaturesSection";
 import PricingCard from "../components/PricingCard";
 import PageLayout from "../layouts/Page-layout";
 
-export default function GymSoftwarePage() {
-    const plans = [
-        {
-            name: "Basic",
-            price: "19500",
-            period: "One-Time",
-            product: "gym-software",
-            features: [
-                "Can manage 2,000 members",
-                "Can accept payments offline",
-                "Member attendance can be tracked",
-                "SMS system integrated",
-                "Membership package tracking",
-                "2 users can use simultaneously",
-                "24/7 customer support",
-                "Basic financial reporting",
-            ],
-        },
-        {
-            name: "Premium",
-            price: "29500",
-            period: "One-Time",
-            product: "gym-software",
-            popular: true,
-            features: [
-                "Can manage 5,000 members",
-                "Can accept payments online/offline",
-                "Member attendance can be tracked",
-                "SMS system integrated",
-                "Membership package tracking",
-                "5 users can use simultaneously",
-                "24/7 priority support",
-                "Advanced financial reporting",
-                "Business growth analytics",
-            ],
-        },
-        {
-            name: "Enterprise",
-            price: "99500",
-            period: "One-Time",
-            product: "gym-software",
-            features: [
-                "Can manage 20,000+ members",
-                "Can accept payments online/offline",
-                "Member attendance can be tracked",
-                "SMS system integrated",
-                "Membership package tracking",
-                "10+ users can use simultaneously",
-                "24/7 dedicated support",
-                "Complete business intelligence",
-                "Customized reporting",
-                "API access",
-            ],
-        },
-    ];
-
+export default function GymSoftwarePage({ plans }) {
     const features = [
         {
             icon: "👥",
@@ -143,13 +88,16 @@ export default function GymSoftwarePage() {
 
                     <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 mb-8">
                         <h2 className="text-xl font-semibold text-emerald-800 mb-3">
-                            Why Choose Our POS Software?
+                            Why Choose Our Software?
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {[
-                                "Standard easy software",
-                                "Secure data protection",
-                                "Mobile friendly",
+                                "User-friendly interface",
+                                "Advanced analytics & reporting",
+                                "Automated billing & payments",
+                                "Real-time attendance tracking",
+                                "Mobile app compatibility",
+                                "24/7 customer support",
                             ].map((item, index) => (
                                 <div
                                     key={index}
