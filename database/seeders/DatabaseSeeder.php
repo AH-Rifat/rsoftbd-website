@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ContactUs;
 use App\Models\ProductPricePlan;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -77,5 +78,22 @@ class DatabaseSeeder extends Seeder
                 ]),
             ],
         ]);
+
+        for ($i = 0; $i < 100; $i++) {
+            ContactUs::insert([
+                [
+                    'name' => 'John Doe',
+                    'email' => 'V6FwI@example.com',
+                    'phone' => '1234567890',
+                    'message' => 'Hello, I have a question about your product.',
+                ],
+                [
+                    'name' => 'Jane Smith',
+                    'email' => 'jane@me.com',
+                    'phone' => '9876543210',
+                    'message' => 'I need help with my account.',
+                ],
+            ]);
+        }
     }
 }
